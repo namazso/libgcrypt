@@ -292,9 +292,19 @@
     <ClCompile Include="..\src\fips.c" />
     <ClCompile Include="..\src\global.c" />
     <ClCompile Include="..\src\hmac256.c" />
-    <None Include="..\src\hwf-x86.c">
+    <ClCompile Include="..\src\hwf-x86.c">
       <FileType>CppCode</FileType>
-    </None>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='DebugDLLWinRT|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='DebugDLL|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseWinRT|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLLStaticDeps|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='DebugWinRT|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLLWinRT|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLLWinRTStaticDeps|ARM64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="..\src\hwfeatures.c" />
     <ClCompile Include="..\src\misc.c" />
     <ClCompile Include="..\src\missing-string.c" />
@@ -1060,6 +1070,7 @@
       <MinimalRebuild>false</MinimalRebuild>
       <TreatSpecificWarningsAsErrors>4113;%(TreatSpecificWarningsAsErrors)</TreatSpecificWarningsAsErrors>
       <DisableSpecificWarnings>4146;4018;4028;4244;4267;4715;4334;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Lib>
       <OutputFile>$(OutDir)\lib\x86\$(TargetName)$(TargetExt)</OutputFile>
@@ -1193,6 +1204,7 @@ del /f /q $(OutDir)\licenses\libgcrypt.txt
       <MinimalRebuild>false</MinimalRebuild>
       <TreatSpecificWarningsAsErrors>4113;%(TreatSpecificWarningsAsErrors)</TreatSpecificWarningsAsErrors>
       <DisableSpecificWarnings>4146;4018;4028;4244;4267;4715;4334;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Lib>
       <OutputFile>$(OutDir)\lib\x64\$(TargetName)$(TargetExt)</OutputFile>
@@ -1258,6 +1270,7 @@ del /f /q $(OutDir)\licenses\libgcrypt.txt
       <MinimalRebuild>false</MinimalRebuild>
       <TreatSpecificWarningsAsErrors>4113;%(TreatSpecificWarningsAsErrors)</TreatSpecificWarningsAsErrors>
       <DisableSpecificWarnings>4146;4018;4028;4244;4267;4715;4334;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Lib>
       <OutputFile>$(OutDir)\lib\$(Platform)\$(TargetName)$(TargetExt)</OutputFile>
@@ -1905,6 +1918,7 @@ del /f /q $(OutDir)\licenses\libgcrypt.txt
       <ProgramDataBaseFileName>$(OutDir)\lib\x86\$(TargetName).pdb</ProgramDataBaseFileName>
       <TreatSpecificWarningsAsErrors>4113;%(TreatSpecificWarningsAsErrors)</TreatSpecificWarningsAsErrors>
       <DisableSpecificWarnings>4146;4018;4028;4244;4267;4715;4334;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Lib>
       <OutputFile>$(OutDir)\lib\x86\$(TargetName)$(TargetExt)</OutputFile>
@@ -2052,6 +2066,7 @@ del /f /q $(OutDir)\licenses\libgcrypt.txt
       <ProgramDataBaseFileName>$(OutDir)\lib\x64\$(TargetName).pdb</ProgramDataBaseFileName>
       <TreatSpecificWarningsAsErrors>4113;%(TreatSpecificWarningsAsErrors)</TreatSpecificWarningsAsErrors>
       <DisableSpecificWarnings>4146;4018;4028;4244;4267;4715;4334;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Lib>
       <OutputFile>$(OutDir)\lib\x64\$(TargetName)$(TargetExt)</OutputFile>
@@ -2124,6 +2139,7 @@ del /f /q $(OutDir)\licenses\libgcrypt.txt
       <ProgramDataBaseFileName>$(OutDir)\lib\$(Platform)\$(TargetName).pdb</ProgramDataBaseFileName>
       <TreatSpecificWarningsAsErrors>4113;%(TreatSpecificWarningsAsErrors)</TreatSpecificWarningsAsErrors>
       <DisableSpecificWarnings>4146;4018;4028;4244;4267;4715;4334;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Lib>
       <OutputFile>$(OutDir)\lib\$(Platform)\$(TargetName)$(TargetExt)</OutputFile>
