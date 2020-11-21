@@ -107,7 +107,7 @@ implementations */
 /* #undef HAVE_CPU_ARCH_SPARC */
 
 /* Defined for the x86 platforms */
-#define HAVE_CPU_ARCH_X86 1
+/* #undef HAVE_CPU_ARCH_X86 */
 
 /* Define to 1 if you have the declaration of `sys_siglist', and to 0 if you
    don't. */
